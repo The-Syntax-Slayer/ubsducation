@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --primary-color: #1e3a8a;
+    --secondary-color: #ffffff;
+    --accent-color: #fbbf24;
+    --text-color: #333333;
+    --light-bg: #f3f4f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: var(--secondary-color);
+}
+
+.logo i {
+    font-size: 2rem;
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--accent-color);
+}
+
+main {
+    padding-top: 80px;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/ubsimage.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--secondary-color);
+}
+
+/* Update the hero-card styles */
+.hero-card {
+    background-color: rgba(255, 255, 255, 0.1); /* Even lower opacity */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    backdrop-filter: blur(3px); /* Reduced blur effect */
+}
+
+.hero-card h1 {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-card p {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.section {
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.feature {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: calc(33.33% - 2rem);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature h2 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.news-ticker {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.news-ticker marquee {
+    width: 100%;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+    }
+
+    nav ul li {
+        margin: 0 1rem;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .feature {
+        width: 100%;
+    }
+}
+
+/* Add these styles at the end of the file */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+}
+
+.animate-on-scroll.animate {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.cta-button:hover {
+    animation: pulse 0.5s ease-in-out infinite;
+}
+
+.feature:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+nav ul li a {
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 5px var(--accent-color);
+}
+
+.hero h1 {
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero p {
+    animation: fadeInUp 1s ease-out 0.5s backwards;
+}
+
+.cta-button {
+    animation: fadeInUp 1s ease-out 1s backwards;
+}
+
+/* Existing styles remain unchanged */
+
+@media screen and (max-width: 1024px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .features {
+        flex-direction: column;
+    }
+
+    .feature {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        position: relative;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero-content {
+        padding: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}

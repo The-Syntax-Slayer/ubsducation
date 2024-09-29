@@ -1,0 +1,54 @@
+@import url('index.css');
+
+.student-life-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.student-life-item {
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    max-width: calc(33.33% - 1.33rem);
+}
+
+.student-life-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.student-life-item i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.student-life-item h3 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .student-life-item {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .student-life-grid {
+        grid-template-columns: 1fr;
+    }
+}
